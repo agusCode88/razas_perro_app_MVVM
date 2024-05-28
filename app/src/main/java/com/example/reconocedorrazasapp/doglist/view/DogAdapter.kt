@@ -1,11 +1,11 @@
-package com.example.reconocedorrazasapp.doglist
+package com.example.reconocedorrazasapp.doglist.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reconocedorrazasapp.Dog
+import com.example.reconocedorrazasapp.model.Dog
 import com.example.reconocedorrazasapp.databinding.DogListItemBinding
 
 class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {

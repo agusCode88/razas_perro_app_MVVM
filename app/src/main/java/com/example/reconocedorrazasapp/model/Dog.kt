@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp
+package com.example.reconocedorrazasapp.model
 
 data class Dog(
     val id: Long,

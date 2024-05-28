@@ -1,31 +1,16 @@
-package com.example.reconocedorrazasapp.doglist
+package com.example.reconocedorrazasapp.repository
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.reconocedorrazasapp.Dog
-import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
+import com.example.reconocedorrazasapp.model.Dog
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-class DogListActivity : AppCompatActivity() {
+class DogRepository {
 
-    private lateinit var binding: ActivityDogListBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityDogListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val dogList = getFakeDogs()
-        val recycler = binding.recyclerDogs
-        recycler.layoutManager = LinearLayoutManager(this)
-        val adapter = DogAdapter()
-
-        recycler.adapter = adapter
-        adapter.submitList(dogList)
-
+    suspend fun fetchDogs(): MutableList<Dog> {
+        return withContext(Dispatchers.IO) {
+             getFakeDogs()
+        }
     }
-
     private fun getFakeDogs(): MutableList<Dog> {
         val dogList = mutableListOf<Dog>()
         dogList.add(
