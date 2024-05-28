@@ -56,6 +56,7 @@ class DogRepository {
             )
         )
         return dogList
+        
     }
 
 }
