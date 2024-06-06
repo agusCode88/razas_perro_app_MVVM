@@ -1,12 +1,12 @@
-package com.example.reconocedorrazasapp.doglist.view
+package com.example.reconocedorrazasapp.presentation.doglist.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
-import com.example.reconocedorrazasapp.doglist.viewmodel.DogListViewModel
-import com.example.reconocedorrazasapp.doglist.viewmodel.DogListViewModelFactory
+import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModel
+import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModelFactory
 import com.example.reconocedorrazasapp.repository.DogRepository
 
 class DogListActivity : AppCompatActivity() {

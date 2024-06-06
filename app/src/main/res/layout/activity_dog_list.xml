@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".doglist.view.DogListActivity">
+    tools:context=".presentation.doglist.view.DogListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_dogs"

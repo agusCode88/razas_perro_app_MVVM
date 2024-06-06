@@ -46,6 +46,11 @@ dependencies {
     // LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
+    implementation (libs.retrofit)
+    implementation (libs.converter.moshi)
+    implementation(libs.moshi.kotlin)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

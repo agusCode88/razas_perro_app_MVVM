@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.doglist.view
+package com.example.reconocedorrazasapp.presentation.doglist.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

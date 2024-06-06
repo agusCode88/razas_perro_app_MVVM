@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.doglist.viewmodel
+package com.example.reconocedorrazasapp.presentation.doglist.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
