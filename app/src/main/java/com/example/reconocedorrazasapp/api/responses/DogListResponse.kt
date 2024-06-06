@@ -1,5 +1,5 @@
 package com.example.reconocedorrazasapp.api.responses
 
-import com.example.reconocedorrazasapp.model.Dog
+import com.example.reconocedorrazasapp.api.dto.DogDTO
 
-data class DogListResponse(val dogs: MutableList<Dog>)
+data class DogListResponse(val dogs: List<DogDTO>)

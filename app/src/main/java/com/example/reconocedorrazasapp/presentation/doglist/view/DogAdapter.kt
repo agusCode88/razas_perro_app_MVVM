@@ -22,7 +22,6 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
         }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewwHolder {
 
         val binding = DogListItemBinding.inflate(LayoutInflater.from(parent.context))
