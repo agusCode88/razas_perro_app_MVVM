@@ -2,9 +2,12 @@ package com.example.reconocedorrazasapp.presentation.doglist.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reconocedorrazasapp.api.ApiResponseStatus
 import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
 import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity
 import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity.Companion.DOG_KEY
@@ -31,6 +34,8 @@ class DogListActivity : AppCompatActivity() {
         val recycler =  binding.recyclerDogs
         recycler.layoutManager = LinearLayoutManager(this)
 
+        val loadingPB = binding.progressBar
+
         val dogAdapter = DogAdapter()
 
         dogAdapter.setOnItemClickListener {
@@ -44,6 +49,32 @@ class DogListActivity : AppCompatActivity() {
 
         viewModel.dogListLV.observe(this){
             dogAdapter.submitList(it)
+        }
+
+        viewModel.status.observe(this){
+
+            when(it){
+                ApiResponseStatus.LOADING -> {
+                    // mostrar Progressbar
+                    loadingPB.visibility = View.VISIBLE
+                 }
+                ApiResponseStatus.ERROR -> {
+                    //Ocultar el Progres Bar
+                    loadingPB.visibility = View.GONE
+                    Toast.makeText(this,"Error al cargar los datos", Toast.LENGTH_SHORT).show()
+                }
+
+                ApiResponseStatus.SUCCESS -> {
+                    // Oculatar el ProgressBar
+                    loadingPB.visibility = View.GONE
+                }
+
+                else -> {
+                    loadingPB.visibility = View.GONE
+                    Toast.makeText(this,"Error desconocido", Toast.LENGTH_SHORT).show()
+                }
+
+            }
         }
 
     }
