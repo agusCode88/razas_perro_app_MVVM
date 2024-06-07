@@ -8,4 +8,6 @@
     <string name="btn_flotante_descrp">Botón flotante de aceptar</string>
     <string name="dog_index_format">#%d</string>
     <string name="dog_life_expectancy_format">%s years</string>
+    <string name="unknow_hoost_error">No hay conexión a Internet</string>
+    <string name="unknow_error">Error desconocido</string>
 </resources>
