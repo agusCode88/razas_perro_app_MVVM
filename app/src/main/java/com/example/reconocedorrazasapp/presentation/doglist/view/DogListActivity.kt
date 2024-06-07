@@ -1,10 +1,13 @@
 package com.example.reconocedorrazasapp.presentation.doglist.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
+import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity
+import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity.Companion.DOG_KEY
 import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModel
 import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModelFactory
 import com.example.reconocedorrazasapp.repository.DogRepository
@@ -29,6 +32,14 @@ class DogListActivity : AppCompatActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
 
         val dogAdapter = DogAdapter()
+
+        dogAdapter.setOnItemClickListener {
+            //Pasar el dog a DoDetailActivity
+            val intent = Intent(this, DogDetailActivity::class.java)
+            intent.putExtra(DOG_KEY, it)
+            startActivity(intent)
+        }
+
         recycler.adapter = dogAdapter
 
         viewModel.dogListLV.observe(this){

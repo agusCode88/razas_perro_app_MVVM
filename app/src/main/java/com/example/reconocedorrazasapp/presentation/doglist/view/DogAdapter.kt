@@ -10,6 +10,8 @@ import com.example.reconocedorrazasapp.databinding.DogListItemBinding
 
 class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
 
+    private var onItemClickListener: ((Dog) ->Unit)? = null
+
     companion object DiffCallback : DiffUtil.ItemCallback<Dog>() {
         override fun areItemsTheSame(oldItem: Dog, newItem: Dog): Boolean {
             // Compara los ID o cualquier propiedad única que identifique al ítem
@@ -21,6 +23,11 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
             return oldItem == newItem
         }
     }
+
+   fun setOnItemClickListener(onItemClickListener: (Dog) -> Unit){
+       this.onItemClickListener = onItemClickListener
+   }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewwHolder {
 
@@ -38,6 +45,9 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
     inner class DogViewwHolder(val binding: DogListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bindDog(dog: Dog){
             binding.txtDogName.text = dog.name
+            binding.txtDogName.setOnClickListener {
+                onItemClickListener?.invoke(dog)
+            }
         }
     }
 }
