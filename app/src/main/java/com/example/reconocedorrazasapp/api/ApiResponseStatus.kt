@@ -1,9 +1,8 @@
 package com.example.reconocedorrazasapp.api
 
 import com.example.reconocedorrazasapp.model.Dog
-
-sealed class ApiResponseStatus {
-    class Success(val dogList: List<Dog>): ApiResponseStatus()
-    class Loading(): ApiResponseStatus()
-    class Error(val errorMessageId: Int): ApiResponseStatus()
+sealed class ApiResponseStatus<T>{
+    class Success<T>(val data: T): ApiResponseStatus<T>()
+    class Loading<T>(): ApiResponseStatus<T>()
+    class Error<T>(val errorMessageId: Int): ApiResponseStatus<T>()
 }
