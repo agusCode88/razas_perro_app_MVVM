@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reconocedorrazasapp.api.ApiResponseStatus
 import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
@@ -14,6 +15,9 @@ import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity.
 import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModel
 import com.example.reconocedorrazasapp.presentation.doglist.viewmodel.DogListViewModelFactory
 import com.example.reconocedorrazasapp.repository.DogRepository
+
+
+private const val GRID_SPAN_COUNT = 3
 
 class DogListActivity : AppCompatActivity() {
 
@@ -32,7 +36,7 @@ class DogListActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,viewModelFactory).get(DogListViewModel::class.java)
 
         val recycler =  binding.recyclerDogs
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = GridLayoutManager(this, GRID_SPAN_COUNT)
 
         val loadingPB = binding.progressBar
 
