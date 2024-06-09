@@ -51,6 +51,7 @@ dependencies {
     implementation (libs.converter.moshi)
     implementation(libs.moshi.kotlin)
 
+    implementation(libs.coil)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

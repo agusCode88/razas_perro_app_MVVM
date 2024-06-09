@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import coil.load
 import com.example.reconocedorrazasapp.R
 import com.example.reconocedorrazasapp.databinding.ActivityDogDetailBinding
 import com.example.reconocedorrazasapp.model.Dog
@@ -35,6 +36,9 @@ class DogDetailActivity : AppCompatActivity() {
         binding.dogNameText.text = dog.name
         binding.dogIndex.text = getString(R.string.dog_index_format, dog.index)
         binding.lifeExpectancy.text = getString(R.string.dog_life_expectancy_format, dog.lifeExpectancy)
-        
+        binding.dogImage.load(dog.imageUrl)
+        binding.closeButton.setOnClickListener {
+            finish()
+        }
     }
 }
