@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -43,16 +44,21 @@ android {
 
 dependencies {
 
+    val nav_version = "2.7.7"
+
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
-
+    //Retrofit y Convertor
     implementation (libs.retrofit)
     implementation (libs.converter.moshi)
     implementation(libs.moshi.kotlin)
-
+    //Imágenes
     implementation(libs.coil)
+    // Navigation Component
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -5,9 +5,21 @@
     <string name="height">Height</string>
     <string name="group">Group</string>
     <string name="male">Male</string>
+
+    <!-- Strings para los formularios de Sesión -->
+    <string name="email">Email: </string>
+    <string name="password">Password: </string>
+    <string name="login">LOGIN</string>
+    <string name="do_not_have_an_account">¿No tienes una cuenta?</string>
+    <string name="register">Registrarse</string>
+    <string name="confirm_password">Confirmar Password: </string>
+    <string name="sign_up">CREAR CUENTA: </string>
+
+
     <string name="btn_flotante_descrp">Botón flotante de aceptar</string>
     <string name="dog_index_format">#%d</string>
     <string name="dog_life_expectancy_format">%s years</string>
     <string name="unknow_hoost_error">No hay conexión a Internet</string>
     <string name="unknow_error">Error desconocido</string>
+
 </resources>
