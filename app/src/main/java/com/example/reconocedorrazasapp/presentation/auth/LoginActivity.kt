@@ -54,6 +54,8 @@ class LoginActivity : AppCompatActivity(), LogingFragment.LoginFragmentActions, 
              .navigate(LogingFragmentDirections.actionLogingFragmentToSignUpFragment())
     }
 
+
+
     private fun showAlertDialog(messageId: Int){
         AlertDialog.Builder(this)
             .setTitle(R.string.error_sign_in)
@@ -61,6 +63,10 @@ class LoginActivity : AppCompatActivity(), LogingFragment.LoginFragmentActions, 
             .setPositiveButton(android.R.string.ok){_, _ -> /** Dismiss Dialog */}
             .create()
             .show()
+    }
+
+    override fun onLoginFieldsValidate(email: String, password: String) {
+        viewModel.login(email,password)
     }
 
     override fun onSignUpFieldsValidate(

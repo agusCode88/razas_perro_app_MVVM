@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.reconocedorrazasapp.R
 import com.example.reconocedorrazasapp.databinding.FragmentSignUpBinding
+import com.example.reconocedorrazasapp.utils.UtilsMethods
 
 class SignUpFragment : Fragment() {
 
@@ -59,7 +60,7 @@ class SignUpFragment : Fragment() {
 
         val email = binding.emailEdit.text.toString()
 
-        if(!isValidEmail(email)){
+        if(!UtilsMethods.isValidEmail(email)){
             binding.emailInput.error = getString(R.string.mail_is_not_valid)
             return
         }
@@ -85,9 +86,5 @@ class SignUpFragment : Fragment() {
 
     }
 
-    private fun isValidEmail(email: String?): Boolean{
-        return !email.isNullOrEmpty() &&
-                Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
 
 }

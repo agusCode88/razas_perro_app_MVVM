@@ -1,11 +1,12 @@
 package com.example.reconocedorrazasapp.api
 
+import com.example.reconocedorrazasapp.api.dto.LoginDTO
 import com.example.reconocedorrazasapp.api.dto.SignUpDTO
+import com.example.reconocedorrazasapp.api.responses.AuthApiResponse
 import com.example.reconocedorrazasapp.api.responses.DogListApiResponse
-import com.example.reconocedorrazasapp.api.responses.SignUpApiResponse
-import com.example.reconocedorrazasapp.model.Dog
 import com.example.reconocedorrazasapp.utils.BASE_URL
 import com.example.reconocedorrazasapp.utils.GET_DOGS
+import com.example.reconocedorrazasapp.utils.LOGIN_URL
 import com.example.reconocedorrazasapp.utils.SIGN_UP_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -31,7 +32,11 @@ interface ApiService{
     suspend fun fetchAllDogs(): DogListApiResponse
 
     @POST(SIGN_UP_URL)
-    suspend fun signUp(@Body signUpDto: SignUpDTO): SignUpApiResponse
+    suspend fun signUp(@Body signUpDto: SignUpDTO): AuthApiResponse
+
+    @POST(LOGIN_URL)
+    suspend fun login(@Body loginDto: LoginDTO): AuthApiResponse
+
 
 }
 

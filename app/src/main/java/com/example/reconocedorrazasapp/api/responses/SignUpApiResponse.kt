@@ -2,7 +2,7 @@ package com.example.reconocedorrazasapp.api.responses
 
 import com.squareup.moshi.Json
 
-class SignUpApiResponse(
+class AuthApiResponse(
     val message: String,
     @Json(name = "is_success")
     val isSuccess: Boolean,

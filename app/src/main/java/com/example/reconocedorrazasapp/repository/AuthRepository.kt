@@ -3,6 +3,7 @@ package com.example.reconocedorrazasapp.repository
 import com.example.reconocedorrazasapp.api.ApiResponseStatus
 import com.example.reconocedorrazasapp.api.DogsApi
 import com.example.reconocedorrazasapp.api.dto.DogDTOMapper
+import com.example.reconocedorrazasapp.api.dto.LoginDTO
 import com.example.reconocedorrazasapp.api.dto.SignUpDTO
 import com.example.reconocedorrazasapp.api.dto.UserDTOMapper
 import com.example.reconocedorrazasapp.api.makeNetWorkCall
@@ -29,4 +30,24 @@ class AuthRepository {
             userDTOMapper.fromUserDtoToUserDomain(userDto)
         }
     }
+
+
+    suspend fun login(email: String, password: String): ApiResponseStatus<User> {
+        return makeNetWorkCall {
+            val loginDto = LoginDTO(email, password)
+            val loginResponse = DogsApi.retrofitService.login(loginDto)
+
+            if (!loginResponse.isSuccess ) {
+                throw Exception(loginResponse.message)
+            }
+
+            val userResponse = loginResponse.data ?: throw Exception("Missing 'data' in response")
+            val userDto = userResponse.user ?: throw Exception("Missing 'user' in response 'data'")
+
+            val userDTOMapper = UserDTOMapper()
+            userDTOMapper.fromUserDtoToUserDomain(userDto)
+        }
+    }
+
+
 }

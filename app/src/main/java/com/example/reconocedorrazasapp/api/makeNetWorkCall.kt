@@ -1,28 +1,37 @@
 package com.example.reconocedorrazasapp.api
 
 import com.example.reconocedorrazasapp.R
-import com.example.reconocedorrazasapp.api.dto.DogDTOMapper
+import com.example.reconocedorrazasapp.utils.UNAUTHORIZED_ERROR_CODE
+import retrofit2.HttpException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.UnknownHostException
+
 
 suspend fun <T> makeNetWorkCall(
     call: suspend () -> T
 ): ApiResponseStatus<T> {
     return withContext(Dispatchers.IO) {
         try {
-            // Acá (call) es donde yo puedo enviar los corchetes que sea y lo hace genérico
+            // Ejecutar la llamada de red
             ApiResponseStatus.Success(call())
-        } catch(e : UnknownHostException){
-            ApiResponseStatus.Error(R.string.unknow_hoost_error)
-        } catch (e: Exception){
-            when(e.message){
+        } catch (e: UnknownHostException) {
+            ApiResponseStatus.Error(R.string.unknown_host_error)
+        } catch (e: HttpException) {
+            val errorMessage = if (e.code() == UNAUTHORIZED_ERROR_CODE) {
+                R.string.wrong_user_or_password
+            } else {
+                R.string.unknow_error
+            }
+            ApiResponseStatus.Error(errorMessage)
+        } catch (e: Exception) {
+            val errorMessage = when (e.message) {
                 "sign_up_error" -> R.string.error_sing_up
                 "sign_in_error" -> R.string.error_sign_in
-                "user_already_exists"  -> R.string.user_already_exists
-                else -> e.toString()
+                "user_already_exists" -> R.string.user_already_exists
+                else -> R.string.unknow_error
             }
-            ApiResponseStatus.Error(R.string.unknow_error)
+            ApiResponseStatus.Error(errorMessage)
         }
     }
 }

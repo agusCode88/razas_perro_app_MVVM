@@ -28,5 +28,7 @@
     <string name="error_sing_up">Error al intentar login</string>
     <string name="error_sign_in">Ha ocurrido un error al intentar iniciar sesión</string>
     <string name="user_already_exists">Usuario ya Existe</string>
+    <string name="unknown_host_error">Error desconocido del servidor</string>
+    <string name="wrong_user_or_password">Usuario o contraseña incorrecto</string>
 
 </resources>
