@@ -1,5 +1,6 @@
 package com.example.reconocedorrazasapp.presentation.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -12,6 +13,22 @@ import com.example.reconocedorrazasapp.databinding.FragmentSignUpBinding
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
+    private lateinit var signUpFragmentActions: SignUpFragmenActions
+
+    interface SignUpFragmenActions {
+        fun onSignUpFieldsValidate(email: String, password:String,
+                                   passwordConfirmation: String )
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        signUpFragmentActions = try {
+            context as SignUpFragmenActions
+        } catch(e: ClassCastException) {
+            throw ClassCastException("$context must implement LoginFragmentActions")
+
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +80,9 @@ class SignUpFragment : Fragment() {
             binding.passwordInput.error = getString(R.string.passwords_do_not_match)
             return
         }
+
+        signUpFragmentActions.onSignUpFieldsValidate(email, password, passwordConfirmation)
+
     }
 
     private fun isValidEmail(email: String?): Boolean{

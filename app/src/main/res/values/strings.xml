@@ -25,5 +25,8 @@
     <string name="password_is_not_empty">Password is not empty</string>
     <string name="confirm_password_is_not_empty">Confirm password is not empty</string>
     <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="error_sing_up">Error al intentar login</string>
+    <string name="error_sign_in">Ha ocurrido un error al intentar iniciar sesión</string>
+    <string name="user_already_exists">Usuario ya Existe</string>
 
 </resources>

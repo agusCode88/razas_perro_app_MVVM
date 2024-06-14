@@ -9,16 +9,6 @@ import android.view.ViewGroup
 import com.example.reconocedorrazasapp.R
 import com.example.reconocedorrazasapp.databinding.FragmentLoginBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LogingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LogingFragment : Fragment() {
 
     interface LoginFragmentActions{
@@ -28,10 +18,9 @@ class LogingFragment : Fragment() {
     private  lateinit var loginFragmentAction: LoginFragmentActions
     private lateinit var binding : FragmentLoginBinding
 
-
     /**
      * Cuando el fragment se une al activity , el activity le pasa un contexto y puede
-     * ocupar la nterface en cualquier punto de la aplicación
+     * ocupar la interface en cualquier punto de la aplicación
      */
     override fun onAttach(context: Context) {
         super.onAttach(context)
