@@ -1,7 +1,7 @@
-package com.example.reconocedorrazasapp.api.dto
+package com.example.reconocedorrazasapp.data.api.dto
 
-import com.example.reconocedorrazasapp.model.Dog
-import com.example.reconocedorrazasapp.model.User
+import com.example.reconocedorrazasapp.domain.model.Dog
+import com.example.reconocedorrazasapp.domain.model.User
 
 class UserDTOMapper {
      fun fromUserDtoToUserDomain(userDTO: UserDTO): User {

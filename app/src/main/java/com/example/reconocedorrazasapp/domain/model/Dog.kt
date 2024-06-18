@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.model
+package com.example.reconocedorrazasapp.domain.model
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

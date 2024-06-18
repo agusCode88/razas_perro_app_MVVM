@@ -1,13 +1,12 @@
 package com.example.reconocedorrazasapp.repository
 
-import com.example.reconocedorrazasapp.api.ApiResponseStatus
-import com.example.reconocedorrazasapp.api.DogsApi
-import com.example.reconocedorrazasapp.api.dto.DogDTOMapper
-import com.example.reconocedorrazasapp.api.dto.LoginDTO
-import com.example.reconocedorrazasapp.api.dto.SignUpDTO
-import com.example.reconocedorrazasapp.api.dto.UserDTOMapper
-import com.example.reconocedorrazasapp.api.makeNetWorkCall
-import com.example.reconocedorrazasapp.model.User
+import com.example.reconocedorrazasapp.data.api.connection.ApiResponseStatus
+import com.example.reconocedorrazasapp.data.api.connection.DogsApi
+import com.example.reconocedorrazasapp.data.api.dto.LoginDTO
+import com.example.reconocedorrazasapp.data.api.dto.SignUpDTO
+import com.example.reconocedorrazasapp.data.api.dto.UserDTOMapper
+import com.example.reconocedorrazasapp.data.api.connection.makeNetWorkCall
+import com.example.reconocedorrazasapp.domain.model.User
 
 class AuthRepository {
 

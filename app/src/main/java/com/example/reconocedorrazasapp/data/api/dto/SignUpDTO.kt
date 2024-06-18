@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.api.dto
+package com.example.reconocedorrazasapp.data.api.dto
 
 import com.squareup.moshi.Json
 

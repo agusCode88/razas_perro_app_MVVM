@@ -1,6 +1,6 @@
-package com.example.reconocedorrazasapp.api.dto
+package com.example.reconocedorrazasapp.data.api.dto
 
-import com.example.reconocedorrazasapp.model.Dog
+import com.example.reconocedorrazasapp.domain.model.Dog
 
 class DogDTOMapper {
     private fun fromDogDtoToDogDomain(dogDTO: DogDTO): Dog {

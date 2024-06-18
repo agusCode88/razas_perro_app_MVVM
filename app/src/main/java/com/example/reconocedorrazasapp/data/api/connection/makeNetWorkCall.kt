@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.api
+package com.example.reconocedorrazasapp.data.api.connection
 
 import com.example.reconocedorrazasapp.R
 import com.example.reconocedorrazasapp.utils.UNAUTHORIZED_ERROR_CODE

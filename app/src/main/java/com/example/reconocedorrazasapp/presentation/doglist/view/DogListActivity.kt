@@ -7,8 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.reconocedorrazasapp.api.ApiResponseStatus
+import com.example.reconocedorrazasapp.data.api.connection.ApiResponseStatus
 import com.example.reconocedorrazasapp.databinding.ActivityDogListBinding
 import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity
 import com.example.reconocedorrazasapp.presentation.dogdetail.DogDetailActivity.Companion.DOG_KEY

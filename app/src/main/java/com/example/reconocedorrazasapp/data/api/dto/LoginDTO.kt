@@ -1,4 +1,4 @@
-package com.example.reconocedorrazasapp.api.dto
+package com.example.reconocedorrazasapp.data.api.dto
 
 data class LoginDTO(
     val email: String,

@@ -4,9 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.reconocedorrazasapp.api.ApiResponseStatus
-import com.example.reconocedorrazasapp.model.Dog
-import com.example.reconocedorrazasapp.model.User
+import com.example.reconocedorrazasapp.data.api.connection.ApiResponseStatus
+import com.example.reconocedorrazasapp.domain.model.User
 import com.example.reconocedorrazasapp.repository.AuthRepository
 import kotlinx.coroutines.launch
 

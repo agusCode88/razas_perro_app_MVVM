@@ -1,9 +1,9 @@
-package com.example.reconocedorrazasapp.api
+package com.example.reconocedorrazasapp.data.api.connection
 
-import com.example.reconocedorrazasapp.api.dto.LoginDTO
-import com.example.reconocedorrazasapp.api.dto.SignUpDTO
-import com.example.reconocedorrazasapp.api.responses.AuthApiResponse
-import com.example.reconocedorrazasapp.api.responses.DogListApiResponse
+import com.example.reconocedorrazasapp.data.api.dto.LoginDTO
+import com.example.reconocedorrazasapp.data.api.dto.SignUpDTO
+import com.example.reconocedorrazasapp.data.api.responses.AuthApiResponse
+import com.example.reconocedorrazasapp.data.api.responses.DogListApiResponse
 import com.example.reconocedorrazasapp.utils.BASE_URL
 import com.example.reconocedorrazasapp.utils.GET_DOGS
 import com.example.reconocedorrazasapp.utils.LOGIN_URL

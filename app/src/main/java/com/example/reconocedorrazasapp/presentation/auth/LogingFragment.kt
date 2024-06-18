@@ -2,7 +2,6 @@ package com.example.reconocedorrazasapp.presentation.auth
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,7 +47,7 @@ class LogingFragment : Fragment() {
             loginFragmentAction.onRegisterButtonClick()
         }
 
-        binding.loginRegisterButton.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             validateFields()
         }
 
@@ -72,10 +71,7 @@ class LogingFragment : Fragment() {
             return
         }
 
-
-
         loginFragmentAction.onLoginFieldsValidate(email, password)
     }
-
 
 }

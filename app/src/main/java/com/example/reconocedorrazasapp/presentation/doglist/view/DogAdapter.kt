@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.reconocedorrazasapp.databinding.DogListItemBinding
-import com.example.reconocedorrazasapp.model.Dog
+import com.example.reconocedorrazasapp.domain.model.Dog
 
 class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
 

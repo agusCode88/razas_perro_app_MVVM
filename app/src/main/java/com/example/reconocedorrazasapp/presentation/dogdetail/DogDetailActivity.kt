@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import coil.load
 import com.example.reconocedorrazasapp.R
 import com.example.reconocedorrazasapp.databinding.ActivityDogDetailBinding
-import com.example.reconocedorrazasapp.model.Dog
+import com.example.reconocedorrazasapp.domain.model.Dog
 
 class DogDetailActivity : AppCompatActivity() {
 
