@@ -4,4 +4,7 @@
     <string name="mail_is_not_valid">Mail is not valid</string>
     <string name="password_is_not_correct">Password is not correct</string>
     <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="btn_fab_content_description">Boton para poder tomarle una fotografía a un perro</string>
+    <string name="btn_fab_list_description">Botón para poder abrir la lista de perros registrados en la aplicación</string>
+    <string name="btn_fab_settings">Botón para abrir las configuraciones de la aplicación</string>
 </resources>

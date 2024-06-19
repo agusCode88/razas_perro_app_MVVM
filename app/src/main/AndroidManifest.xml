@@ -14,29 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dogedex"
         tools:targetApi="31">
-
+        <activity
+            android:name=".presentation.settings.SettingsActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.auth.LoginActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".presentation.dogdetail.DogDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".presentation.doglist.view.DogListActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
