@@ -1,4 +1,8 @@
 package com.example.reconocedorrazasapp.data.api.dto
 
-class AddDogToUserDTO {
-}
+import com.squareup.moshi.Json
+
+data class AddDogToUserDTO(
+    @Json(name = "dog_id")
+    val dogId: String
+)
