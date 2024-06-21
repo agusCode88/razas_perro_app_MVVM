@@ -7,4 +7,5 @@
     <string name="btn_fab_content_description">Boton para poder tomarle una fotografía a un perro</string>
     <string name="btn_fab_list_description">Botón para poder abrir la lista de perros registrados en la aplicación</string>
     <string name="btn_fab_settings">Botón para abrir las configuraciones de la aplicación</string>
+    <string name="error_adding_dog">No se ha podido agregar un perro a la lista</string>
 </resources>

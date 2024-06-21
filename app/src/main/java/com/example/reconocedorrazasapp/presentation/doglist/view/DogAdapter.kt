@@ -12,6 +12,7 @@ import com.example.reconocedorrazasapp.domain.model.Dog
 class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
 
     private var onItemClickListener: ((Dog) ->Unit)? = null
+    private var onLongItemClickListener: ((Dog) -> Unit)? = null
 
     companion object DiffCallback : DiffUtil.ItemCallback<Dog>() {
         override fun areItemsTheSame(oldItem: Dog, newItem: Dog): Boolean {
@@ -28,6 +29,10 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
    fun setOnItemClickListener(onItemClickListener: (Dog) -> Unit){
        this.onItemClickListener = onItemClickListener
    }
+
+    fun setOnLongItemClickListener(onLongItemClickListener: (Dog) -> Unit){
+        this.onLongItemClickListener = onLongItemClickListener
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewwHolder {
@@ -46,6 +51,10 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewwHolder>(DiffCallback) {
         fun bindDog(dog: Dog){
             binding.dogListItemLayout.setOnClickListener {
                 onItemClickListener?.invoke(dog)
+            }
+            binding.dogListItemLayout.setOnLongClickListener{
+                onLongItemClickListener?.invoke(dog)
+                true
             }
             binding.dogImage.load(dog.imageUrl)
         }
