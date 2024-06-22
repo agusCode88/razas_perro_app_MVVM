@@ -9,6 +9,7 @@ import com.example.reconocedorrazasapp.data.api.responses.DogListApiResponse
 import com.example.reconocedorrazasapp.utils.ADD_DOG
 import com.example.reconocedorrazasapp.utils.BASE_URL
 import com.example.reconocedorrazasapp.utils.GET_DOGS
+import com.example.reconocedorrazasapp.utils.GET_USER_DOGS_URL
 import com.example.reconocedorrazasapp.utils.LOGIN_URL
 import com.example.reconocedorrazasapp.utils.SIGN_UP_URL
 import com.squareup.moshi.Moshi
@@ -51,6 +52,10 @@ interface ApiService{
     @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY } : true")
     @POST(ADD_DOG)
     suspend fun addDogToUser(@Body addDogToUserDTO: AddDogToUserDTO): DefaultResponse
+
+    @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY } : true")
+    @GET(GET_USER_DOGS_URL)
+    suspend fun getUserDogs(): DogListApiResponse
 
 
 }
