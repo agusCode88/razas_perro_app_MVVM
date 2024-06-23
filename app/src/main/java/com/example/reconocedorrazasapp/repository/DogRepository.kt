@@ -57,14 +57,16 @@ class DogRepository {
         }
     }
 
-    private fun getCollectionListSuccess(allDogsList: List<Dog>, userDogList: List<Dog>): List<Dog>{
+    private fun getCollectionListSuccess(allDogsList: List<Dog>, userDogList: List<Dog>): List<Dog> {
         return allDogsList.map {
-            if(userDogList.contains(it))
+            if (userDogList.contains(it))
                 it
             else
-                Dog(0,it.index,"","",0.0,0.0,
-                    "","","","","")
-        }
+                Dog(
+                    it.id, it.index, "", "", 0.0, 0.0,
+                    "", "", "", "", ""
+                )
+        }.sorted()
     }
 
 }

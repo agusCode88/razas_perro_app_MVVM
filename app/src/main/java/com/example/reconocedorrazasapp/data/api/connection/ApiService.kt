@@ -49,14 +49,13 @@ interface ApiService{
     @POST(LOGIN_URL)
     suspend fun login(@Body loginDto: LoginDTO): AuthApiResponse
 
-    @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY } : true")
+    @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY }:true")
     @POST(ADD_DOG)
     suspend fun addDogToUser(@Body addDogToUserDTO: AddDogToUserDTO): DefaultResponse
 
-    @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY } : true")
+    @Headers("${ ApiServiceInterceptor.NEEDS_AUTH_HEADER_KEY }:true")
     @GET(GET_USER_DOGS_URL)
     suspend fun getUserDogs(): DogListApiResponse
-
 
 }
 
