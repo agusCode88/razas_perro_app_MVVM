@@ -8,6 +8,7 @@ import com.example.reconocedorrazasapp.data.api.connection.makeNetWorkCall
 import com.example.reconocedorrazasapp.data.api.dto.AddDogToUserDTO
 import com.example.reconocedorrazasapp.domain.model.Dog
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 
 class DogRepository {
@@ -40,8 +41,11 @@ class DogRepository {
 
     suspend fun getDogCollection(): ApiResponseStatus<List<Dog>>{
         return withContext(Dispatchers.IO){
-            val allDogsListResponse = fetchDogs()
-            val userDogListResponse = getUserDogs()
+            val allDogsListReffered = async {fetchDogs()}
+            val userDogListReferred = async {getUserDogs()}
+
+            val allDogsListResponse = allDogsListReffered.await()
+            val userDogListResponse = userDogListReferred.await()
 
             if(allDogsListResponse is ApiResponseStatus.Error){
                 allDogsListResponse
@@ -64,7 +68,7 @@ class DogRepository {
             else
                 Dog(
                     it.id, it.index, "", "", 0.0, 0.0,
-                    "", "", "", "", ""
+                    "", "", "", "", "",false
                 )
         }.sorted()
     }
