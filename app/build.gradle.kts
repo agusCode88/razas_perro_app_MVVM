@@ -45,6 +45,7 @@ android {
 dependencies {
 
     val nav_version = "2.7.7"
+    val camerax_version = "1.4.0-beta02"
 
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -59,6 +60,10 @@ dependencies {
     // Navigation Component
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    // Camera X
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

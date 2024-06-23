@@ -8,4 +8,6 @@
     <string name="btn_fab_list_description">Botón para poder abrir la lista de perros registrados en la aplicación</string>
     <string name="btn_fab_settings">Botón para abrir las configuraciones de la aplicación</string>
     <string name="error_adding_dog">No se ha podido agregar un perro a la lista</string>
+    <string name="camera_persmission_title_dialog">"Permisos de cámara "</string>
+    <string name="camera_messagge_dialog">Tienes que aceptar la cámara para poder utilizarla</string>
 </resources>
